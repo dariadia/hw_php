@@ -98,10 +98,20 @@ echo PHP_EOL.'Задание 6.'.PHP_EOL;
 $months = [
     "Январь", "Февраль", "Март", "Апрель","Май","Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
 ];
+$dates = [
+    "1", "2", "3", "4","5","6", "..", "29"
+];
 ?>
 <ul>
     <?php foreach ($months as $key => $value) :?>
-    <li>Месяц <?=$key?> - <?=$value?> <br/></li>
+    <li>
+        Месяц <?=$key+1?> - <?=$value?> <br/>
+        <ul>
+        <?php foreach ($dates as $key => $value) :?>
+            <li>День <?=$value?> <br/></li>
+        <?php endforeach;?>
+    </li>
+    </ul>
     <?php endforeach;?>
 </ul>
 
